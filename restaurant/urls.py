@@ -1,7 +1,7 @@
-from restaurant.views import index, menuEspecial
+from restaurant import views
 from django.urls import path
 
 urlpatterns = [
-    path('menu/<str:day>', index),
-    path('menu-especial/<str:day>', menuEspecial),
+    path('menu', views.MenuItemsView.as_view()),
+    path('menu/<int:pk>', views.SingleMenuItemView.as_view())
 ]
